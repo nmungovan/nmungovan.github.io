@@ -1,7 +1,8 @@
-<link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+@import url(https://fonts.googleapis.com/css?family=Didact Gothic);
 
 body {
   background-color: #ffe8d6;
   color: #283618;
-  font-family: 'Didact Gothic';
+  font-family: 'Didact Gothic', sans-serif;
+  font-weight: 400px;
 }
