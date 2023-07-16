@@ -1,18 +1,17 @@
 import React, { type ReactElement } from 'react'
 import { LandingPage } from './pages/LandingPage'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { AboutMe } from './pages/AboutMe'
 import { Resume } from './pages/Resume'
 
 function App (): ReactElement {
   return (
-    <BrowserRouter>
       <Routes>
-        <Route path='/' element={<LandingPage />} />
+        {/** TODO Find a way to fix this routing issue **/}
+        <Route path='/' element={<Resume />} />
         <Route path='/about' element={<AboutMe />} />
         <Route path='/resume' element={<Resume />} />
       </Routes>
-    </BrowserRouter>
   )
 }
 
