@@ -1,7 +1,18 @@
 {
-  "short_name": "nmungovan.github.io",
-  "name": "Nolan Mungovan",
-  "icons": [],
+  "short_name": "Nolan Mungovan",
+  "name": "nmungovan.github.io",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "apple-icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
