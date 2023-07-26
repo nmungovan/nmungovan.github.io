@@ -1,5 +1,4 @@
 import React, { type ReactElement } from 'react'
-import { LandingPage } from './pages/LandingPage'
 import { Route, Routes } from 'react-router-dom'
 import { AboutMe } from './pages/AboutMe'
 import { Resume } from './pages/Resume'
