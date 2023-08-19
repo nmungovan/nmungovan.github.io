@@ -14,6 +14,7 @@ const toast: WorkExperience = {
   location: 'Boston, MA',
   position: 'Software Engineer Co-op, Security Champion',
   startDate: new Date('2023-01-17T12:00:00Z'),
+  endDate: new Date('2023-08-25T12:00:00Z'),
   description: `Employee Cloud, Payroll Product Group
   Contribute to the full-stack development and optimization of one of Toast's most-used customer workflows through designing, implementing, documenting, and configuring database, backend, and frontend code.
   Perform rigorous QA for code changes through unit, integration, and manual tests.

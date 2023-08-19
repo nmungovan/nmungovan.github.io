@@ -11,11 +11,15 @@ function formatDate (start: Date, end?: Date): string {
   return startDate.concat(' - ', endDate)
 }
 
+export function Title ({ children }: PropsWithChildren<unknown>) {
+  return (<h1 className='font-bold text-xl mt-3'>{children}</h1>)
+}
+
 export function GridItem ({ children }: PropsWithChildren<unknown>): ReactElement {
   return (<div className='px-5 justify-center'>{children}</div>)
 }
 
-export function Title ({ children }: PropsWithChildren<unknown>): ReactElement {
+export function Subtitle ({ children }: PropsWithChildren<unknown>): ReactElement {
   return (<h2 className='font-semibold text-left px-5 pt-3'>{children}</h2>)
 }
 
@@ -30,9 +34,9 @@ export function LeftItem ({ children }: PropsWithChildren<unknown>): ReactElemen
 export function ExperienceItem ({ exp }: { exp: Experience }): ReactElement {
   const { setModalOpen } = React.useContext(ModalContext)
   return (
-    <div className='bg-stone-800 text-slate-50 sm:mx-2 md:mx-5 mb-20 overflow-auto pb-20 hover:scale-105 transition ease-in-out hover:scale-105 duration-300' onClick={() => { setModalOpen(exp) }}>
+    <div className='bg-stone-800 text-slate-50 sm:mx-2 md:mx-5 mb-10 overflow-auto pb-20 hover:scale-105 transition ease-in-out hover:scale-105 duration-300' onClick={() => { setModalOpen(exp) }}>
         <div className='grid grid-cols-2'>
-            <Title>{exp.name}</Title>
+            <Subtitle>{exp.name}</Subtitle>
             <RightItem>{exp.location}</RightItem>
         </div>
         <GridItem>{formatDate(exp.startDate, exp.endDate)}</GridItem>
@@ -44,7 +48,7 @@ export function ProjectItem ({ exp }: { exp: Project }): ReactElement {
   return (
     <div className='bg-stone-800 text-slate-50 sm:mx-2 md:mx-5 mb-20 overflow-auto pb-20 transition ease-in-out hover:scale-105 duration-300' onClick={() => { setModalOpen(exp) }}>
         <div className='grid grid-cols-2'>
-            <Title>{exp.name}</Title>
+            <Subtitle>{exp.name}</Subtitle>
         </div>
         <GridItem>{formatDate(exp.startDate, exp.endDate)}</GridItem>
     </div>)
