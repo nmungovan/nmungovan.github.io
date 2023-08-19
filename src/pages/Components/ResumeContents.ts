@@ -14,6 +14,7 @@ const toast: WorkExperience = {
   location: 'Boston, MA',
   position: 'Software Engineer Co-op, Security Champion',
   startDate: new Date('2023-01-17T12:00:00Z'),
+  endDate: new Date('2023-08-25T12:00:00Z'),
   description: `Employee Cloud, Payroll Product Group
   Contribute to the full-stack development and optimization of one of Toast's most-used customer workflows through designing, implementing, documenting, and configuring database, backend, and frontend code.
   Perform rigorous QA for code changes through unit, integration, and manual tests.
@@ -52,7 +53,7 @@ const summerBridge: WorkExperience = {
   description: 'Facilitated team-building and networking activities with incoming first-year Khoury College of Computer Sciences students to provide insight into the shift to college life and computer science academia for Summer Bridge Week 2022 and 2023.'
 }
 
-export const workExperiences: WorkExperience[] = [toast, nuAqa, starbucks, summerBridge]
+export const workExperiences: WorkExperience[] = [toast, nuAqa, starbucks, summerBridge].sort((a, b) => {return a.startDate.getSeconds() - b.startDate.getSeconds()})
 
 // education
 export interface Education {
