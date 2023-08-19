@@ -53,7 +53,7 @@ const summerBridge: WorkExperience = {
   description: 'Facilitated team-building and networking activities with incoming first-year Khoury College of Computer Sciences students to provide insight into the shift to college life and computer science academia for Summer Bridge Week 2022 and 2023.'
 }
 
-export const workExperiences: WorkExperience[] = [toast, nuAqa, starbucks, summerBridge].sort((a, b) => {return a.startDate.getSeconds() - b.startDate.getSeconds()})
+export const workExperiences: WorkExperience[] = [toast, nuAqa, starbucks, summerBridge]
 
 // education
 export interface Education {

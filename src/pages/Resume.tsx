@@ -16,7 +16,7 @@ export function Resume (): ReactElement {
     <div className='flex grid grid-cols-1 w-3/4 mx-auto'>
       <Title>Work Experience</Title>
       <div className='flex grid sm:grid-cols-1 md:grid-cols-4 my-4'>
-        {workExperiences.sort((a, b) => {return b.startDate.getSeconds() - a.startDate.getSeconds()}).map((exp) => {return <ExperienceItem exp={exp} />})}
+        {workExperiences.map((exp) => {return <ExperienceItem exp={exp} />})}
       </div>
       <Title>Education</Title>
       <div className='flex grid sm:grid-cols-1 md:grid-cols-4 my-4'>
