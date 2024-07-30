@@ -5,12 +5,7 @@ import React, { type ReactElement } from 'react'
  * @returns
  */
 export function AboutMe (): ReactElement {
-  return (<div className='flex grid grid-cols-1'>
-        <div className='flex grid grid-cols-3'>
-        </div>
-
-    </div>
-  )
+  return <h1>Hi</h1>
 }
 
 /*
