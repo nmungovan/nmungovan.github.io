@@ -20,11 +20,11 @@ export function GridItem ({ children }: PropsWithChildren<unknown>): ReactElemen
 }
 
 export function Subtitle ({ children }: PropsWithChildren<unknown>): ReactElement {
-  return (<h2 className='font-semibold text-left px-5 pt-3'>{children}</h2>)
+  return (<div className='font-semibold text-left px-5 pt-3'>{children}</div>)
 }
 
 export function RightItem ({ children }: PropsWithChildren<unknown>): ReactElement {
-  return (<h2 className='font-normal text-right pr-4 truncate pt-3'>{children}</h2>)
+  return (<div className='font-normal text-left px-5 pt-1'>{children}</div>)
 }
 
 export function LeftItem ({ children }: PropsWithChildren<unknown>): ReactElement {
@@ -34,22 +34,22 @@ export function LeftItem ({ children }: PropsWithChildren<unknown>): ReactElemen
 export function ExperienceItem ({ exp }: { exp: Experience }): ReactElement {
   const { setModalOpen } = React.useContext(ModalContext)
   return (
-    <div className='bg-stone-800 text-slate-50 sm:mx-2 md:mx-5 mb-10 overflow-auto pb-20 hover:scale-105 transition ease-in-out hover:scale-105 duration-300' onClick={() => { setModalOpen(exp) }}>
-        <div className='grid grid-cols-2'>
+    <button type='button' className='w-full flex flex-col justify-start items-stretch text-left bg-stone-800 text-slate-50 mb-4 overflow-hidden pb-6 md:pb-12 transition ease-in-out md:hover:scale-105 duration-300 cursor-pointer active:bg-stone-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800' onClick={() => { setModalOpen(exp) }}>
+        <div className='grid grid-cols-1'>
             <Subtitle>{exp.name}</Subtitle>
             <RightItem>{exp.location}</RightItem>
         </div>
         {'startDate' in exp && <GridItem>{formatDate(exp.startDate, exp.endDate)}</GridItem>}
-    </div>)
+    </button>)
 }
 
 export function ProjectItem ({ exp }: { exp: Project }): ReactElement {
   const { setModalOpen } = React.useContext(ModalContext)
   return (
-    <div className='bg-stone-800 text-slate-50 sm:mx-2 md:mx-5 mb-20 overflow-auto pb-20 transition ease-in-out hover:scale-105 duration-300' onClick={() => { setModalOpen(exp) }}>
-        <div className='grid grid-cols-2'>
+    <button type='button' className='w-full flex flex-col justify-start items-stretch text-left bg-stone-800 text-slate-50 mb-4 overflow-hidden pb-6 md:pb-12 transition ease-in-out md:hover:scale-105 duration-300 cursor-pointer active:bg-stone-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800' onClick={() => { setModalOpen(exp) }}>
+        <div className='grid grid-cols-1'>
             <Subtitle>{exp.name}</Subtitle>
         </div>
         <GridItem>{formatDate(exp.startDate, exp.endDate)}</GridItem>
-    </div>)
+    </button>)
 }

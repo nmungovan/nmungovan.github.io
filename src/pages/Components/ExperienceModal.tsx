@@ -20,7 +20,7 @@ export function ExperienceModal ({ experience }: { experience: ExperienceOrProje
   return (
     <Drawer open={modalOpen !== null} onClose={() => { setModalOpen(null) }} anchor='right'>
       <DrawerHeader />
-        <div className='grid grid-cols-1 sm:w-screen md:w-auto md:px-1 max-w-xl'>
+        <div className='grid grid-cols-1 w-screen md:w-auto md:px-1 max-w-xl'>
             <ModalTitle>{experience.name}</ModalTitle>
             <ModalSubtitle>{experience.position}</ModalSubtitle>
             {'startDate' in experience && <ModalDates>{formatDate(experience.startDate, experience.endDate)}</ModalDates>}
@@ -34,8 +34,8 @@ function DrawerHeader (): ReactElement {
   const { setModalOpen } = useContext(ModalContext)
   return (
     <div className='h-12 px-1 pt-1 bg-slate-100 content-end'>
-      <IconButton className='ml-auto mr-0' aria-label='close' size='medium' onClick={() => { setModalOpen(null) }}>
-        <CloseIcon fontSize='inherit' />
+      <IconButton className='ml-auto mr-0' aria-label='close' sx={{ width: 44, height: 44 }} onClick={() => { setModalOpen(null) }}>
+        <CloseIcon />
       </IconButton>
     </div>
   )
