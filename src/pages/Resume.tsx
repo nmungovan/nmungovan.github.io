@@ -16,7 +16,7 @@ export function Resume (): ReactElement {
     <div className='flex grid grid-cols-1 w-3/4 mx-auto'>
       <Title>Work Experience</Title>
       <div className='flex grid sm:grid-cols-1 md:grid-cols-4 my-4'>
-        {workExperiences.map((exp) => {return <ExperienceItem key={exp.name} exp={exp} />})}
+        {workExperiences.map((exp) => {return <ExperienceItem key={`${exp.name}-${exp.startDate.toISOString()}`} exp={exp} />})}
       </div>
       <Title>Education</Title>
       <div className='flex grid sm:grid-cols-1 md:grid-cols-4 my-4'>
@@ -24,11 +24,11 @@ export function Resume (): ReactElement {
       </div>
       <Title>Organizations</Title>
       <div className='flex grid sm:grid-cols-1 md:grid-cols-4 my-4'>
-        {organizations.map((exp) => {return <ExperienceItem key={exp.name} exp={exp} />})}
+        {organizations.map((exp) => {return <ExperienceItem key={`${exp.name}-${exp.startDate.toISOString()}`} exp={exp} />})}
       </div>
       <Title>Projects</Title>
       <div className='flex grid sm:grid-cols-1 md:grid-cols-4 my-4'>
-        {projects.map((exp) => {return <ProjectItem key={exp.name} exp={exp} />})}
+        {projects.map((exp) => {return <ProjectItem key={`${exp.name}-${exp.startDate.toISOString()}`} exp={exp} />})}
       </div>
     </div>
     {(modalOpen !== null) && <ExperienceModal experience={modalOpen} />}

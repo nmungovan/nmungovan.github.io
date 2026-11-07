@@ -23,7 +23,7 @@ export function ExperienceModal ({ experience }: { experience: ExperienceOrProje
         <div className='grid grid-cols-1 sm:w-screen md:w-auto md:px-1 max-w-xl'>
             <ModalTitle>{experience.name}</ModalTitle>
             <ModalSubtitle>{experience.position}</ModalSubtitle>
-            <ModalDates>{formatDate(experience.startDate, experience.endDate)}</ModalDates>
+            {'startDate' in experience && <ModalDates>{formatDate(experience.startDate, experience.endDate)}</ModalDates>}
             <ModalDesc>{experience.description}</ModalDesc>
         </div>
     </Drawer>

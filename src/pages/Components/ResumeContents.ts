@@ -11,16 +11,39 @@ export interface WorkExperience {
 
 const toast: WorkExperience = {
   name: 'Toast, Inc',
+  location: 'New York, NY',
+  position: 'Software Engineer II, Security Champion',
+  startDate: new Date('2025-01-06T12:00:00Z'),
+  description: `Full-stack product, platform, and AI agent tooling development for enterprise menu management in Java, Kotlin, and TypeScript.
+  Drive legacy deprecation initiatives, moving users to new tools and keeping stakeholders aligned through meetings and documentation.
+  Build reusable UI components and shared, efficient config search endpoints.
+  Triage bugs, resolve incidents, and serve as DRI on cross-team projects, including multi-region infrastructure rollouts.
+  Lead security initiatives within the scrum team and address vulnerabilities across services.
+  Mentor and onboard engineers, and build AI-assisted tools and documentation for teams.
+  Previously Software Engineer I (January 2025 - September 2026); Security Champion since July 2025.`
+}
+
+const khouryTa: WorkExperience = {
+  name: 'Khoury College of Computer Sciences',
+  location: 'Boston, MA',
+  position: 'Teaching Assistant',
+  startDate: new Date('2023-08-15T12:00:00Z'),
+  endDate: new Date('2024-12-15T12:00:00Z'),
+  description: 'Teaching Assistant for Fundamentals of Computer Science I-II (CS2500, CS2510).'
+}
+
+const toastCoop: WorkExperience = {
+  name: 'Toast, Inc',
   location: 'Boston, MA',
   position: 'Software Engineer Co-op, Security Champion',
   startDate: new Date('2023-01-17T12:00:00Z'),
   endDate: new Date('2023-08-25T12:00:00Z'),
   description: `Employee Cloud, Payroll Product Group
-  Contribute to the full-stack development and optimization of one of Toast's most-used customer workflows through designing, implementing, documenting, and configuring database, backend, and frontend code.
-  Perform rigorous QA for code changes through unit, integration, and manual tests.
-  Participate in code reviews to ensure technical implementations meet functional requirements.
-  Leverage vulnerability tracking software and attend internal Security Champion meetings to promote and advocate for secure code practices within Toast.`
-
+  Contributed to the full-stack development and optimization of one of the most-used customer workflows through designing, implementing, and documenting code in SQL, Kotlin, and TypeScript.
+  Improved SQL query cost for external partners by 99.99% using indexes and memory-level validation.
+  Led frontend initiatives on implementing workflows, authorization checks, upgrading a legacy webpage, and publishing an RFC on URL parameterization.
+  Analyzed beta SPA usage with Splunk, Datadog, and Sentry to determine performance and error rates.
+  Leveraged security platforms to remove critical vulnerabilities within microservices.`
 }
 
 const nuAqa: WorkExperience = {
@@ -33,34 +56,12 @@ const nuAqa: WorkExperience = {
   Conducted cursory research using Tableau to reinforce best practices for academic quality, assessment strategies, and curriculum design.`
 }
 
-const starbucks: WorkExperience = {
-  name: 'Starbucks',
-  location: 'Massachusetts',
-  position: 'Partner',
-  startDate: new Date('2021-01-17T12:00:00Z'),
-  endDate: new Date('2022-09-01T12:00:00Z'),
-  description: `Hand-crafted custom drinks/food items, managed inventory stock, and created connections in high-volume stores to create the “third place” for customers. 
-  Successfully and efficiently trained 10+ baristas in all positions. 
-  Awarded "Partner of the Quarter" for Summer 2021 due to exemplary work ethic and character.`
-}
-
-const summerBridge: WorkExperience = {
-  name: 'NU Summer Bridge Program',
-  location: 'Boston, MA',
-  position: 'Peer Mentor',
-  startDate: new Date('2022-07-01T12:00:00Z'),
-  endDate: new Date('2023-07-01T12:00:00Z'),
-  description: 'Facilitated team-building and networking activities with incoming first-year Khoury College of Computer Sciences students to provide insight into the shift to college life and computer science academia for Summer Bridge Week 2022 and 2023.'
-}
-
-export const workExperiences: WorkExperience[] = [toast, nuAqa, starbucks, summerBridge]
+export const workExperiences: WorkExperience[] = [toast, khouryTa, toastCoop, nuAqa]
 
 // education
 export interface Education {
   name: string
   location: string
-  startDate: Date
-  endDate: Date
   coursework: string
   description: string
   degree?: string
@@ -71,18 +72,14 @@ export interface Education {
 const neu: Education = {
   name: 'Northeastern University',
   location: 'Boston, MA',
-  startDate: new Date('2021-09-01T12:00:00Z'),
-  endDate: new Date('2025-04-28T12:00:00Z'),
   coursework: 'TODO',
   degree: 'BSCS',
-  description: 'Current candidate for a Bachelor of Science in Computer Science with a concentration in Systems and a minor in Management Information Systems.'
+  description: 'Graduated magna cum laude with a Bachelor of Science in Computer Science, a concentration in Systems, and a minor in Management Information Systems.'
 }
 
 const doherty: Education = {
   name: 'Doherty Memorial High School',
   location: 'Worcester, MA',
-  startDate: new Date('2017-08-01T12:00:00Z'),
-  endDate: new Date('2021-06-01T12:00:00Z'),
   coursework: 'TODO',
   degree: 'Engineering & Technology Academy Certificate',
   description: 'Graduated as valedictorian from the Engineering and Technology Academy at Doherty Memorial High School, a rigorous program with a focus on science, math, and engineering. Completed college-level engineering courses through PLTW to further knowledge of engineering design and related fields.'
@@ -91,8 +88,6 @@ const doherty: Education = {
 const mites: Education = {
   name: 'MITES Semester',
   location: 'Remote',
-  startDate: new Date('2020-07-01T12:00:00Z'),
-  endDate: new Date('2020-12-01T12:00:00Z'),
   coursework: 'TODO',
   description: 'Extended Python and electrical engineering knowledge to my final project, an American Sign Language to English translator made from accelerometers. Interviewed Dr. Erica Knowles, assistant professor at Berklee College of Music, wrote, and self-published my article titled "Music and the Numerous Health and Social Benefits."'
 }
@@ -100,8 +95,6 @@ const mites: Education = {
 const qcc: Education = {
   name: 'Quinsigamond Community College',
   location: 'Worcester, MA',
-  startDate: new Date('2019-05-01T12:00:00Z'),
-  endDate: new Date('2021-05-01T12:00:00Z'),
   coursework: 'TODO',
   description: 'Completed four college-level courses through the Early College Worcester dual-enrollment program.'
 }
@@ -116,6 +109,15 @@ export interface Project {
   associatedWith: string
   description: string
   position?: string
+}
+
+const progressiveMeshing: Project = {
+  name: 'Progressive Meshing on 3-D Objects',
+  startDate: new Date('2024-04-01T12:00:00Z'),
+  endDate: new Date('2024-04-30T12:00:00Z'),
+  associatedWith: 'Northeastern University',
+  description: `Capstone Project for Computer Graphics (CS4300).
+  Implemented a progressive meshing algorithm into a self-built application that renders 3-dimensional objects to reduce the number of object faces using C/C++ and OpenGL 4.1.`
 }
 
 const dinnerParty: Project = {
@@ -163,7 +165,26 @@ const aslTranslator: Project = {
   description: 'Created a physical prototype glove (using Adafruit M4 Metro Board and Python) that analyzes various accelerometer outputs on digits through normalization/dot product comparison and outputs a letter based on those readings against a database of values (HID keyboard).'
 }
 
-export const projects: Project[] = [dinnerParty, networkSec, marbleSol, jezzball, aslTranslator]
+const measuringSpoon: Project = {
+  name: 'Measuring Spoon Organizer',
+  startDate: new Date('2020-10-01T12:00:00Z'),
+  endDate: new Date('2021-01-31T12:00:00Z'),
+  associatedWith: 'Doherty Memorial High School',
+  description: `The final project for the PLTW course, Engineering Design and Development.
+  Created the concept for a magnetic holder for measuring spoons, created a 3D/physical prototype, and designed a business model to mass-produce and sell our product.`
+}
+
+const kelleySquare: Project = {
+  name: 'Redesigning Kelley Square',
+  startDate: new Date('2019-05-01T12:00:00Z'),
+  endDate: new Date('2019-06-30T12:00:00Z'),
+  associatedWith: 'Doherty Memorial High School',
+  description: `The final project for the PLTW course, Principles of Engineering.
+  Conceptually redesigned the infamous Kelley Square in Worcester, MA into a simple four-way intersection using traffic lights.
+  Designed a functioning traffic light prototype using VEX Robotics equipment and C programming language.`
+}
+
+export const projects: Project[] = [progressiveMeshing, dinnerParty, networkSec, marbleSol, jezzball, measuringSpoon, aslTranslator, kelleySquare]
 
 // skills
 export const skills: string[] = ['React.js', 'Typescript', 'Security', 'TODO']
@@ -181,6 +202,7 @@ export interface Organization {
 const cup: Organization = {
   name: 'Council for University Programs',
   startDate: new Date('2021-09-01T12:00:00Z'),
+  endDate: new Date('2024-12-15T12:00:00Z'),
   position: 'Director of Operations',
   location: 'Boston, MA',
   description: `Volunteered as staff (set-up, load-out, general tasks) for various campus events, including Northeastern's Homecoming, Springfest Festival, and small concerts.
@@ -190,6 +212,7 @@ const cup: Organization = {
 const first: Organization = {
   name: 'Khoury FIRST',
   startDate: new Date('2022-10-01T12:00:00Z'),
+  endDate: new Date('2024-12-15T12:00:00Z'),
   position: 'Mentee',
   location: 'Boston, MA',
   description: 'Northeastern University Khoury College of Computer Sciences mentorship program to support first-generation/low-income college students in continuation of education.'
@@ -198,6 +221,7 @@ const first: Organization = {
 const summerBridgeOrg: Organization = {
   name: 'Summer Bridge Scholars',
   startDate: new Date('2022-05-01T12:00:00Z'),
+  endDate: new Date('2023-07-01T12:00:00Z'),
   position: 'Peer Mentor',
   location: 'Boston, MA',
   description: 'Facilitated and planned team-building and networking activities with incoming first-year Khoury College of Computer Sciences students to provide insight into the shift to college life and computer science academia.'
