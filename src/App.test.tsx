@@ -2,7 +2,7 @@ import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import App from './App'
-import { workExperiences } from './pages/Components/ResumeContents'
+import { projects, workExperiences } from './pages/Components/ResumeContents'
 
 function renderAt (path: string): void {
   render(
@@ -38,5 +38,21 @@ describe('App', () => {
 
     await user.click(close)
     await waitFor(() => { expect(screen.queryByRole('button', { name: 'close' })).not.toBeInTheDocument() })
+  })
+
+  it('lists projects and renders a project detail page', () => {
+    renderAt('/projects')
+    expect(screen.getByRole('heading', { name: 'Projects' })).toBeInTheDocument()
+    expect(screen.getAllByRole('link', { name: new RegExp(projects[0].name) }).length).toBeGreaterThan(0)
+  })
+
+  it('renders a project at /projects/:slug and a fallback for unknown slugs', () => {
+    renderAt(`/projects/${projects[0].slug}`)
+    expect(screen.getByRole('heading', { name: projects[0].name })).toBeInTheDocument()
+  })
+
+  it('shows not-found for an unknown project slug', () => {
+    renderAt('/projects/nope')
+    expect(screen.getByRole('heading', { name: 'Project not found' })).toBeInTheDocument()
   })
 })

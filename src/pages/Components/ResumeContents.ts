@@ -102,25 +102,43 @@ const qcc: Education = {
 export const educations: Education[] = [neu, doherty, mites, qcc]
 
 // projects
+export interface ProjectLink {
+  label: string
+  url: string
+}
+
 export interface Project {
+  slug: string
   name: string
   startDate: Date
   endDate: Date
   associatedWith: string
   description: string
   position?: string
+  tech?: string[]
+  links?: ProjectLink[]
 }
 
 const progressiveMeshing: Project = {
+  slug: 'progressive-meshing',
+  tech: ['C/C++', 'OpenGL 4.1'],
   name: 'Progressive Meshing on 3-D Objects',
   startDate: new Date('2024-04-01T12:00:00Z'),
   endDate: new Date('2024-04-30T12:00:00Z'),
   associatedWith: 'Northeastern University',
   description: `Capstone Project for Computer Graphics (CS4300).
-  Implemented a progressive meshing algorithm into a self-built application that renders 3-dimensional objects to reduce the number of object faces using C/C++ and OpenGL 4.1.`
+  Implemented a progressive meshing algorithm into a self-built application that renders 3-dimensional objects to reduce the number of object faces using C/C++ and OpenGL 4.1.`,
+  links: [
+    {
+      label: 'Demo Video',
+      url: 'https://www.youtube.com/watch?v=xHWYfFjGD84'
+    }
+  ]
 }
 
 const dinnerParty: Project = {
+  slug: 'dinner-party',
+  tech: ['Kotlin', 'Dropwizard', 'JetBrains Exposed', 'ChatGPT API'],
   name: 'Dinner Party',
   startDate: new Date('2023-05-01T12:00:00Z'),
   endDate: new Date('2023-05-02T12:00:00Z'),
@@ -130,42 +148,76 @@ const dinnerParty: Project = {
 }
 
 const networkSec: Project = {
+  slug: 'network-security',
+  tech: ['Aircrack-ng', 'Wireshark', 'Linux', '802.11', 'MAVLink'],
   name: 'Network Security Exploratory Project',
   startDate: new Date('2022-10-01T12:00:00Z'),
   endDate: new Date('2022-11-01T12:00:00Z'),
   associatedWith: 'Northeastern University',
   description: `Culminating project in the Introduction to Computer Science Research Seminar.
-  Explored how devices wirelessly exchange information and used network sniffing to compromise data in a controlled environment.
-  Discussed the 802.11x framework and multi-layered authentication protocols that keep data protected on the internet.`
+  Used network sniffing (Aircrack-ng, Wireshark) in a controlled lab to capture and decode wireless traffic, including telemetry from a drone using a MAVLink dissector.
+  Studied 802.11 packet structure and WPA2's EAPOL four-way handshake to understand how data is protected on the internet.`,
+  links: [
+    {
+      label: 'Final Presentation',
+      url: 'https://drive.google.com/file/d/1TYBhzM1E_j5ZnDJr5e32gzPcJ-Fcl_iT/view?usp=drivesdk'
+    }
+  ]
 }
 
 const marbleSol: Project = {
+  slug: 'marble-solitaire',
+  tech: ['Java'],
   name: 'Marble Solitaire',
   startDate: new Date('2022-05-01T12:00:00Z'),
   endDate: new Date('2022-05-31T12:00:00Z'),
   associatedWith: 'Northeastern University',
   description: `Created a fully customizable marble solitaire game in Java following object-oriented design principles.
   Contains options for board sizes, hole placement, type (English, Triangle, European), and view type (console/GUI).
-  Built as JAR file, the project can be executed within a Java environment.`
+  Built as JAR file, the project can be executed within a Java environment.`,
+  links: [
+    {
+      label: 'GitHub',
+      url: 'https://github.com/nmungovan/marble-solitaire-cs3500'
+    }
+  ]
 }
 
 const jezzball: Project = {
+  slug: 'multiplayer-jezzball',
+  tech: ['Racket'],
   name: 'Multiplayer JezzBall',
   startDate: new Date('2021-10-01T12:00:00Z'),
   endDate: new Date('2021-11-01T12:00:00Z'),
   associatedWith: 'Northeastern University',
-  description: 'Created an "n"-player game of JezzBall in Racket using big-bang and message handlers over a client-server network (to connect remote players) with working game logic for one and multiple players.'
+  description: 'Created an "n"-player game of JezzBall in Racket using big-bang and message handlers over a client-server network (to connect remote players) with working game logic for one and multiple players.',
+  links: [
+    {
+      label: 'GitHub',
+      url: 'https://github.com/nmungovan/multiplayer-jezzball-cs2500a'
+    }
+  ]
 }
 
 const aslTranslator: Project = {
+  slug: 'asl-translator',
+  tech: ['Python', 'Adafruit M4 Metro'],
   name: 'ASL Alphabet to English Translator',
   startDate: new Date('2020-07-01T12:00:00Z'),
   endDate: new Date('2020-08-01T12:00:00Z'),
   associatedWith: 'MITES Semester',
-  description: 'Created a physical prototype glove (using Adafruit M4 Metro Board and Python) that analyzes various accelerometer outputs on digits through normalization/dot product comparison and outputs a letter based on those readings against a database of values (HID keyboard).'
+  description: 'Created a physical prototype glove (using Adafruit M4 Metro Board and Python) that analyzes various accelerometer outputs on digits through normalization/dot product comparison and outputs a letter based on those readings against a database of values (HID keyboard).',
+  links: [
+    {
+      label: 'MOSTEC Presentation',
+      url: 'https://drive.google.com/file/d/11w-XFdqPV32JNFDv-pei3UZg72PH3D7X/view?usp=drivesdk'
+    }
+  ]
 }
 
 const measuringSpoon: Project = {
+  slug: 'measuring-spoon-organizer',
+  tech: ['3D prototyping'],
   name: 'Measuring Spoon Organizer',
   startDate: new Date('2020-10-01T12:00:00Z'),
   endDate: new Date('2021-01-31T12:00:00Z'),
@@ -175,6 +227,8 @@ const measuringSpoon: Project = {
 }
 
 const kelleySquare: Project = {
+  slug: 'kelley-square',
+  tech: ['C', 'VEX Robotics'],
   name: 'Redesigning Kelley Square',
   startDate: new Date('2019-05-01T12:00:00Z'),
   endDate: new Date('2019-06-30T12:00:00Z'),

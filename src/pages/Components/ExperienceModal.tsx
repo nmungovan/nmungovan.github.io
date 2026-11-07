@@ -5,7 +5,7 @@ import { type ExperienceOrProject } from './ResumeContents'
 import { ModalDates, ModalSubtitle, ModalTitle, ModalDesc } from './ModalComponents'
 import CloseIcon from '@mui/icons-material/Close'
 
-function formatDate (start: Date, end?: Date): string {
+export function formatDate (start: Date, end?: Date): string {
   const startDate = start.toLocaleString('default', { month: 'long' }).concat(' ', start.getFullYear().toString())
   let endDate = 'Present'
   if (end != null) {
