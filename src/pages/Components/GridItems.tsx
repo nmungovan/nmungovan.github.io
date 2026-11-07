@@ -39,7 +39,7 @@ export function ExperienceItem ({ exp }: { exp: Experience }): ReactElement {
             <Subtitle>{exp.name}</Subtitle>
             <RightItem>{exp.location}</RightItem>
         </div>
-        <GridItem>{formatDate(exp.startDate, exp.endDate)}</GridItem>
+        {'startDate' in exp && <GridItem>{formatDate(exp.startDate, exp.endDate)}</GridItem>}
     </div>)
 }
 
