@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    // `yarn deploy` publishes this directory to gh-pages
+    // the Deploy workflow (.github/workflows/deploy.yml) publishes this directory to GitHub Pages
     outDir: 'build'
   },
   test: {
