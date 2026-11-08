@@ -1,6 +1,6 @@
 import React, { useState, type ReactElement } from 'react'
-import { ExperienceItem, ProjectItem, Title } from './Components/GridItems'
-import { educations, workExperiences, organizations, projects, type ExperienceOrProject } from './Components/ResumeContents'
+import { ExperienceItem, Title } from './Components/GridItems'
+import { educations, workExperiences, organizations, type Experience } from './Components/ResumeContents'
 import { ModalContext } from './Components/ModalContext'
 import { ExperienceModal } from './Components/ExperienceModal'
 
@@ -9,7 +9,7 @@ import { ExperienceModal } from './Components/ExperienceModal'
  * @returns the React resume page of my website
  */
 export function Resume (): ReactElement {
-  const [modalOpen, setModalOpen] = useState<ExperienceOrProject | null>(null)
+  const [modalOpen, setModalOpen] = useState<Experience | null>(null)
 
   return (
     <ModalContext.Provider value={{ modalOpen, setModalOpen }}>
@@ -25,10 +25,6 @@ export function Resume (): ReactElement {
       <Title>Organizations</Title>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4'>
         {organizations.map((exp) => {return <ExperienceItem key={`${exp.name}-${exp.startDate.toISOString()}`} exp={exp} />})}
-      </div>
-      <Title>Projects</Title>
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4'>
-        {projects.map((exp) => {return <ProjectItem key={`${exp.name}-${exp.startDate.toISOString()}`} exp={exp} />})}
       </div>
     </div>
     {(modalOpen !== null) && <ExperienceModal experience={modalOpen} />}
