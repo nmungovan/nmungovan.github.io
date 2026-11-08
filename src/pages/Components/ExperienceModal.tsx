@@ -1,5 +1,5 @@
 import { Drawer, IconButton } from '@mui/material'
-import React, { useContext, type ReactElement } from 'react'
+import { useContext, type ReactElement } from 'react'
 import { ModalContext } from './ModalContext'
 import { type Experience } from './ResumeContents'
 import { ModalDates, ModalSubtitle, ModalTitle, ModalDesc } from './ModalComponents'

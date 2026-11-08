@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react'
+import { type ReactElement } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { projects } from './Components/ResumeContents'
 import { formatDate } from './Components/ExperienceModal'

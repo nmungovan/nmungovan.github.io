@@ -12,7 +12,7 @@ function formatDate (start: Date, end?: Date): string {
   return startDate.concat(' - ', endDate)
 }
 
-export function Title ({ children }: PropsWithChildren<unknown>) {
+export function Title ({ children }: PropsWithChildren<unknown>): ReactElement {
   return (<h1 className='font-bold text-xl mt-3'>{children}</h1>)
 }
 
@@ -43,4 +43,3 @@ export function ExperienceItem ({ exp }: { exp: Experience }): ReactElement {
         {'startDate' in exp && <GridItem>{formatDate(exp.startDate, exp.endDate)}</GridItem>}
     </button>)
 }
-

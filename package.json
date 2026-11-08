@@ -42,13 +42,42 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
+    "lint": "eslint --ext .ts,.tsx src",
     "deploy": "yarn build && gh-pages -d build"
   },
   "eslintConfig": {
-    "extends": []
+    "root": true,
+    "extends": [
+      "standard-with-typescript",
+      "plugin:react/recommended",
+      "plugin:react/jsx-runtime"
+    ],
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.d.ts"
+        ],
+        "rules": {
+          "@typescript-eslint/triple-slash-reference": "off"
+        }
+      }
+    ]
   },
   "eslintIgnore": [
-    "node_modules"
+    "node_modules",
+    "build"
   ],
   "browserslist": {
     "production": [

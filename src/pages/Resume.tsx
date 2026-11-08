@@ -1,11 +1,11 @@
-import React, { useState, type ReactElement } from 'react'
+import { useState, type ReactElement } from 'react'
 import { ExperienceItem, Title } from './Components/GridItems'
 import { educations, workExperiences, organizations, type Experience } from './Components/ResumeContents'
 import { ModalContext } from './Components/ModalContext'
 import { ExperienceModal } from './Components/ExperienceModal'
 
 /**
- * 
+ *
  * @returns the React resume page of my website
  */
 export function Resume (): ReactElement {
@@ -19,15 +19,15 @@ export function Resume (): ReactElement {
         <a className='underline' href='https://drive.google.com/file/d/1ATtG40s0Ws_Qlt6v2tOfI8fCIBRk3cN-/view?usp=drivesdk' target='_blank' rel='noopener noreferrer'>Resume (PDF)</a>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4'>
-        {workExperiences.map((exp) => {return <ExperienceItem key={`${exp.name}-${exp.startDate.toISOString()}`} exp={exp} />})}
+        {workExperiences.map((exp) => { return <ExperienceItem key={`${exp.name}-${exp.startDate.toISOString()}`} exp={exp} /> })}
       </div>
       <Title>Education</Title>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4'>
-        {educations.map((exp) => {return <ExperienceItem key={exp.name} exp={exp} />})}
+        {educations.map((exp) => { return <ExperienceItem key={exp.name} exp={exp} /> })}
       </div>
       <Title>Organizations</Title>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4'>
-        {organizations.map((exp) => {return <ExperienceItem key={`${exp.name}-${exp.startDate.toISOString()}`} exp={exp} />})}
+        {organizations.map((exp) => { return <ExperienceItem key={`${exp.name}-${exp.startDate.toISOString()}`} exp={exp} /> })}
       </div>
     </div>
     {(modalOpen !== null) && <ExperienceModal experience={modalOpen} />}
