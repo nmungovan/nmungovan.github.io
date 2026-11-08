@@ -1,5 +1,5 @@
 import React, { type ReactElement, type PropsWithChildren } from 'react'
-import { type Experience, type Project } from './ResumeContents'
+import { type Experience } from './ResumeContents'
 import { ModalContext } from './ModalContext'
 
 function formatDate (start: Date, end?: Date): string {
@@ -44,13 +44,3 @@ export function ExperienceItem ({ exp }: { exp: Experience }): ReactElement {
     </button>)
 }
 
-export function ProjectItem ({ exp }: { exp: Project }): ReactElement {
-  const { setModalOpen } = React.useContext(ModalContext)
-  return (
-    <button type='button' className='w-full flex flex-col justify-start items-stretch text-left bg-stone-800 text-slate-50 mb-4 overflow-hidden pb-6 md:pb-12 transition ease-in-out md:hover:scale-105 duration-300 cursor-pointer active:bg-stone-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800' onClick={() => { setModalOpen(exp) }}>
-        <div className='grid grid-cols-1'>
-            <Subtitle>{exp.name}</Subtitle>
-        </div>
-        <GridItem>{formatDate(exp.startDate, exp.endDate)}</GridItem>
-    </button>)
-}

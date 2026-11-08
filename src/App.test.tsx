@@ -28,7 +28,7 @@ describe('App', () => {
 
   it('renders the resume sections at /resume', () => {
     renderAt('/resume')
-    for (const title of ['Work Experience', 'Education', 'Organizations', 'Projects']) {
+    for (const title of ['Work Experience', 'Education', 'Organizations']) {
       expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
     }
   })

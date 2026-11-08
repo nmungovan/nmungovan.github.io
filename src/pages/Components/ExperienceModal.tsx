@@ -1,7 +1,7 @@
 import { Drawer, IconButton } from '@mui/material'
 import React, { useContext, type ReactElement } from 'react'
 import { ModalContext } from './ModalContext'
-import { type ExperienceOrProject } from './ResumeContents'
+import { type Experience } from './ResumeContents'
 import { ModalDates, ModalSubtitle, ModalTitle, ModalDesc } from './ModalComponents'
 import CloseIcon from '@mui/icons-material/Close'
 
@@ -15,7 +15,7 @@ export function formatDate (start: Date, end?: Date): string {
   return startDate.concat(' - ', endDate)
 }
 
-export function ExperienceModal ({ experience }: { experience: ExperienceOrProject }): ReactElement {
+export function ExperienceModal ({ experience }: { experience: Experience }): ReactElement {
   const { modalOpen, setModalOpen } = useContext(ModalContext)
 
   return (

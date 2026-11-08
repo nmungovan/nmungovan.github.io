@@ -312,6 +312,3 @@ const worcesterCrew: Organization = {
 export const organizations: Organization[] = [cup, first, summerBridgeOrg, sga, riseTogether, worcesterCrew]
 
 export type Experience = WorkExperience | Education | Organization
-
-// modal types
-export type ExperienceOrProject = Experience | Project

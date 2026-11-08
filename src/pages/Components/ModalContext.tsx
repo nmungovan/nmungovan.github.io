@@ -1,9 +1,9 @@
 import { type Dispatch, createContext } from 'react'
-import { type ExperienceOrProject } from './ResumeContents'
+import { type Experience } from './ResumeContents'
 
 export const ModalContext = createContext<{
-  modalOpen: ExperienceOrProject | null
-  setModalOpen: Dispatch<React.SetStateAction<ExperienceOrProject | null>>
+  modalOpen: Experience | null
+  setModalOpen: Dispatch<React.SetStateAction<Experience | null>>
 }>({
   modalOpen: null,
   setModalOpen: () => undefined
