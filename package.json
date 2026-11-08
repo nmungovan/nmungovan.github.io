@@ -11,7 +11,6 @@
     "@types/node": "^16.7.13",
     "@types/react-dom": "^18.0.0",
     "eslint": "^8.0.1",
-    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.12.1",
@@ -42,8 +41,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint --ext .ts,.tsx src",
-    "deploy": "yarn build && gh-pages -d build"
+    "lint": "eslint --ext .ts,.tsx src"
   },
   "eslintConfig": {
     "root": true,
