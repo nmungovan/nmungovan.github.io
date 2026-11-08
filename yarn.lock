@@ -4192,41 +4192,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"my-app@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "my-app@workspace:."
-  dependencies:
-    "@emotion/react": "npm:^11.11.1"
-    "@emotion/styled": "npm:^11.11.0"
-    "@mui/icons-material": "npm:^5.13.7"
-    "@mui/material": "npm:^5.13.7"
-    "@testing-library/jest-dom": "npm:^6"
-    "@testing-library/react": "npm:^13.0.0"
-    "@testing-library/user-event": "npm:^14"
-    "@types/node": "npm:^16.7.13"
-    "@types/react": "npm:^18.3.31"
-    "@types/react-dom": "npm:^18.0.0"
-    "@typescript-eslint/eslint-plugin": "npm:^5.50.0"
-    "@vitejs/plugin-react": "npm:^4"
-    autoprefixer: "npm:^10.6.2"
-    eslint: "npm:^8.0.1"
-    eslint-config-standard-with-typescript: "npm:^36.0.0"
-    eslint-plugin-import: "npm:^2.25.2"
-    eslint-plugin-n: "npm:^15.0.0"
-    eslint-plugin-promise: "npm:^6.0.0"
-    eslint-plugin-react: "npm:^7.32.2"
-    jsdom: "npm:^24"
-    postcss: "npm:^8.5.32"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    react-router-dom: "npm:^6.12.1"
-    tailwindcss: "npm:^3.3.2"
-    typescript: "npm:^5"
-    vite: "npm:^6"
-    vitest: "npm:^3"
-  languageName: unknown
-  linkType: soft
-
 "mz@npm:^2.7.0":
   version: 2.7.0
   resolution: "mz@npm:2.7.0"
@@ -4269,6 +4234,41 @@ __metadata:
   checksum: 10c0/f5f9a7974bfb28a91afafa254b197f0f22c684d4a1731763dda960d2c8e375b36c7d690e0d9dc8fba774c537af14a7e979129bca23d88d052fbeb9466955e447
   languageName: node
   linkType: hard
+
+"nmungovan.github.io@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "nmungovan.github.io@workspace:."
+  dependencies:
+    "@emotion/react": "npm:^11.11.1"
+    "@emotion/styled": "npm:^11.11.0"
+    "@mui/icons-material": "npm:^5.13.7"
+    "@mui/material": "npm:^5.13.7"
+    "@testing-library/jest-dom": "npm:^6"
+    "@testing-library/react": "npm:^13.0.0"
+    "@testing-library/user-event": "npm:^14"
+    "@types/node": "npm:^16.7.13"
+    "@types/react": "npm:^18.3.31"
+    "@types/react-dom": "npm:^18.0.0"
+    "@typescript-eslint/eslint-plugin": "npm:^5.50.0"
+    "@vitejs/plugin-react": "npm:^4"
+    autoprefixer: "npm:^10.6.2"
+    eslint: "npm:^8.0.1"
+    eslint-config-standard-with-typescript: "npm:^36.0.0"
+    eslint-plugin-import: "npm:^2.25.2"
+    eslint-plugin-n: "npm:^15.0.0"
+    eslint-plugin-promise: "npm:^6.0.0"
+    eslint-plugin-react: "npm:^7.32.2"
+    jsdom: "npm:^24"
+    postcss: "npm:^8.5.32"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    react-router-dom: "npm:^6.12.1"
+    tailwindcss: "npm:^3.3.2"
+    typescript: "npm:^5"
+    vite: "npm:^6"
+    vitest: "npm:^3"
+  languageName: unknown
+  linkType: soft
 
 "node-gyp@npm:latest":
   version: 13.1.0
