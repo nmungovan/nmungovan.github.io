@@ -42,8 +42,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "yarn build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": []
