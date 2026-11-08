@@ -2,7 +2,7 @@ import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import App from './App'
-import { projects, workExperiences } from './pages/Components/ResumeContents'
+import { interests, projects, skillGroups, workExperiences } from './pages/Components/ResumeContents'
 
 function renderAt (path: string): void {
   render(
@@ -16,6 +16,26 @@ describe('App', () => {
   it('renders the landing page at /', () => {
     renderAt('/')
     expect(screen.getByRole('heading', { name: 'Nolan Mungovan' })).toBeInTheDocument()
+  })
+
+  it('shows current role and featured projects on the landing page', () => {
+    renderAt('/')
+    const current = workExperiences.find((w) => w.endDate == null)
+    expect(screen.getByText(new RegExp(`Currently ${current?.position}`))).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'View resume' })).toHaveAttribute('href', '/#/resume')
+    expect(screen.getByRole('link', { name: 'View projects' })).toHaveAttribute('href', '/#/projects')
+    expect(screen.getByRole('heading', { name: 'Featured projects' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Progressive Meshing/ })).toHaveAttribute('href', '/projects/progressive-meshing')
+  })
+
+  it('shows interests and skills on the landing page', () => {
+    renderAt('/')
+    for (const { title } of interests) {
+      expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
+    }
+    expect(screen.getByRole('heading', { name: 'Skills' })).toBeInTheDocument()
+    // the marquee renders a second, aria-hidden copy for a seamless loop
+    expect(screen.getAllByText(skillGroups[0].skills[0])).toHaveLength(2)
   })
 
   it('renders footer links on every page', () => {
