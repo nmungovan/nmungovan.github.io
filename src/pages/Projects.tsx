@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react'
+import { type ReactElement } from 'react'
 import { Link } from 'react-router-dom'
 import { projects } from './Components/ResumeContents'
 import { Title } from './Components/GridItems'

@@ -1,4 +1,3 @@
-import React from 'react'
 import { type PropsWithChildren, type ReactElement } from 'react'
 
 export function ModalTitle ({ children }: PropsWithChildren<unknown>): ReactElement {

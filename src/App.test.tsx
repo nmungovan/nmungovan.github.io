@@ -21,7 +21,7 @@ describe('App', () => {
   it('shows current role and featured projects on the landing page', () => {
     renderAt('/')
     const current = workExperiences.find((w) => w.endDate == null)
-    expect(screen.getByText(new RegExp(`Currently ${current?.position}`))).toBeInTheDocument()
+    expect(screen.getByText(new RegExp(`Currently ${current?.position ?? ''}`))).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'View resume' })).toHaveAttribute('href', '/#/resume')
     expect(screen.getByRole('link', { name: 'View projects' })).toHaveAttribute('href', '/#/projects')
     expect(screen.getByRole('heading', { name: 'Featured projects' })).toBeInTheDocument()
