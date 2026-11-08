@@ -29,18 +29,18 @@ export function LandingPage (): ReactElement {
     .filter((p): p is NonNullable<typeof p> => p != null)
 
   return (
-    <div className='w-[87.5%] md:w-3/4 mx-auto py-12 sm:text-center md:text-left'>
+    <div className='w-[87.5%] md:w-3/4 mx-auto pt-12 pb-2 sm:text-center md:text-left'>
       <h1 className='font-bold text-3xl pb-1'>Nolan Mungovan</h1>
       <h2 className='text-lg pb-2'>
         I&apos;m a software engineer.<br />
-        I am highly interested in software development, cybersecurity, and embedded systems.
+        My focus areas are full-stack software development, cybersecurity, and embedded systems.
       </h2>
       {current != null && (
         <p className='text-stone-600 pb-4'>
           Currently {current.position} at {current.name}.
         </p>
       )}
-      <div className='flex flex-wrap gap-3 justify-center md:justify-start'>
+      <div className='flex flex-wrap gap-3 justify-start sm:justify-center md:justify-start'>
         <Button size='small' variant='outlined' href='/#/resume' endIcon={<ArrowForward />} sx={buttonSx}>
           View resume
         </Button>
