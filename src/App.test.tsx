@@ -18,6 +18,14 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'Nolan Mungovan' })).toBeInTheDocument()
   })
 
+  it('renders footer links on every page', () => {
+    renderAt('/projects')
+    const footer = screen.getByRole('contentinfo')
+    expect(within(footer).getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', 'https://www.linkedin.com/in/nolan-mungovan/')
+    expect(within(footer).getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', 'https://github.com/nmungovan')
+    expect(within(footer).getByRole('link', { name: 'Resume' })).toHaveAttribute('href', '/#/resume')
+  })
+
   it('renders the resume sections at /resume', () => {
     renderAt('/resume')
     for (const title of ['Work Experience', 'Education', 'Organizations', 'Projects']) {
