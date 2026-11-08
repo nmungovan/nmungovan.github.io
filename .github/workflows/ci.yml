@@ -1,14 +1,14 @@
 name: CI
 
+# Pull requests only: merges to main are checked again by deploy.yml, which
+# runs the same lint/test/build before publishing.
 on:
   pull_request:
-  push:
-    branches: [main]
 
 permissions:
   contents: read
 
-# Cancel superseded runs on the same branch/PR
+# Cancel superseded runs on the same PR
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
