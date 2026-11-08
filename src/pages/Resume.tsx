@@ -14,7 +14,10 @@ export function Resume (): ReactElement {
   return (
     <ModalContext.Provider value={{ modalOpen, setModalOpen }}>
     <div className='grid grid-cols-1 w-full px-4 md:w-3/4 mx-auto'>
-      <Title>Work Experience</Title>
+      <div className='flex items-baseline justify-between'>
+        <Title>Work Experience</Title>
+        <a className='underline' href='https://drive.google.com/file/d/1ATtG40s0Ws_Qlt6v2tOfI8fCIBRk3cN-/view?usp=drivesdk' target='_blank' rel='noopener noreferrer'>Resume (PDF)</a>
+      </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4'>
         {workExperiences.map((exp) => {return <ExperienceItem key={`${exp.name}-${exp.startDate.toISOString()}`} exp={exp} />})}
       </div>
