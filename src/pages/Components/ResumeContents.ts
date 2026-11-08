@@ -241,7 +241,39 @@ const kelleySquare: Project = {
 export const projects: Project[] = [progressiveMeshing, dinnerParty, networkSec, marbleSol, jezzball, measuringSpoon, aslTranslator, kelleySquare]
 
 // skills
-export const skills: string[] = ['React.js', 'Typescript', 'Security', 'TODO']
+export interface SkillGroup {
+  label: string
+  skills: string[]
+}
+
+export const skillGroups: SkillGroup[] = [
+  { label: 'Languages', skills: ['Kotlin', 'Java', 'TypeScript', 'SQL', 'Python', 'C/C++', 'Racket'] },
+  { label: 'Frontend', skills: ['React'] },
+  { label: 'Security', skills: ['Vulnerability remediation', 'Wireshark', 'Aircrack-ng'] },
+  { label: 'Observability', skills: ['Splunk', 'Datadog', 'Sentry'] },
+  { label: 'Graphics & Hardware', skills: ['OpenGL', 'Adafruit M4 Metro', 'VEX Robotics'] }
+]
+
+// interests
+export interface Interest {
+  title: string
+  description: string
+}
+
+export const interests: Interest[] = [
+  {
+    title: 'Software development',
+    description: 'I ship full-stack features at Toast in Kotlin, Java, and TypeScript. Reusable UI components, fast search endpoints, and retiring legacy tools.'
+  },
+  {
+    title: 'Cybersecurity',
+    description: "I'm a Security Champion at Toast, finding and fixing vulnerabilities across services. In school, I captured and decoded wireless traffic to see how it breaks."
+  },
+  {
+    title: 'Embedded systems',
+    description: 'I like code that touches hardware. I built an accelerometer glove that translates ASL in Python and a traffic light running on VEX in C.'
+  }
+]
 
 // organizations
 export interface Organization {
