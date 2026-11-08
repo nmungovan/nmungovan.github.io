@@ -38,6 +38,13 @@ describe('App', () => {
     expect(screen.getAllByText(skillGroups[0].skills[0])).toHaveLength(2)
   })
 
+  it('keeps the nav bar pinned to the top of the page', () => {
+    renderAt('/projects')
+    const header = screen.getByRole('banner')
+    expect(within(header).getByRole('link', { name: 'Resume' })).toHaveAttribute('href', '/#/resume')
+    expect(header).toHaveClass('sticky', 'top-0')
+  })
+
   it('renders footer links on every page', () => {
     renderAt('/projects')
     const footer = screen.getByRole('contentinfo')
