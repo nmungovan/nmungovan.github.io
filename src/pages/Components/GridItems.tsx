@@ -6,6 +6,7 @@ function formatDate (start: Date, end?: Date): string {
   const startDate = (start.getMonth() + 1).toString() + '/' + start.getFullYear().toString()
   let endDate = 'Present'
   if (end != null) {
+    if (end.getMonth() === start.getMonth() && end.getFullYear() === start.getFullYear()) return startDate
     endDate = (end.getMonth() + 1).toString().concat('/', end.getFullYear().toString())
   }
   return startDate.concat(' - ', endDate)
