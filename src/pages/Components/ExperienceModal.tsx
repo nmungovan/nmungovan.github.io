@@ -9,6 +9,7 @@ export function formatDate (start: Date, end?: Date): string {
   const startDate = start.toLocaleString('default', { month: 'long' }).concat(' ', start.getFullYear().toString())
   let endDate = 'Present'
   if (end != null) {
+    if (end.getMonth() === start.getMonth() && end.getFullYear() === start.getFullYear()) return startDate
     endDate = end.toLocaleString('default', { month: 'long' }).concat(' ', end.getFullYear().toString())
   }
   return startDate.concat(' - ', endDate)
