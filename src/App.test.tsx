@@ -53,6 +53,11 @@ describe('App', () => {
     }
   })
 
+  it('links to the resume PDF on the resume page', () => {
+    renderAt('/resume')
+    expect(screen.getByRole('link', { name: 'Resume (PDF)' })).toHaveAttribute('href', 'https://drive.google.com/file/d/1ATtG40s0Ws_Qlt6v2tOfI8fCIBRk3cN-/view?usp=drivesdk')
+  })
+
   it('opens and closes the detail drawer when a card is clicked', async () => {
     const user = userEvent.setup()
     renderAt('/resume')
